@@ -1,3 +1,9 @@
+/*
+Circle is a class with property radius and methods setRadius(), 
+getRadius(), calcDiameter(), calcArea(). Use double precision for everything. 
+Write appropriate driver program to test the methods.
+*/
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
