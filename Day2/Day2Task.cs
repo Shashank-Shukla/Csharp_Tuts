@@ -145,13 +145,14 @@ class Day2Tasks {
   
   // Definition of Question-5
   private static void Question5(){
-        int min = 2, max = 10000, sum=0;
+        int min = 2, max = 10000, sum;
         Console.WriteLine("Perfect Number are numbers whose sum of divisors equals the number itself.");
         Console.WriteLine($"Perfect numbers in the range of {min} and {max} are:");
         for(int i=min; i<=max; i++){
+            sum=0;
             for(int j=1; j<i; j++)
                 if(i%j == 0)
-                    sum += i;
+                    sum += j;
             if(sum == i)
                 Console.Write($"{i} ");
         }
@@ -160,15 +161,43 @@ class Day2Tasks {
   
   // Definition of Question-6
   private static void Question6(){
-        Console.WriteLine();
-        
+        int n, temp;
+        Console.Write("Enter the size of Array: ");
+        n = int.Parse(Console.ReadLine());
+        int[] Arr = new int[n];
+        Console.WriteLine("Enter the array elemts:");
+        for(int i=0; i<n; i++)
+            Arr[i] = int.Parse(Console.ReadLine());
+        Array.Sort(Arr);        // Using Array.Sort() method
+        Console.WriteLine("Array sorted using Array.Sort() method:");
+        for(int i=0; i<n; i++)
+            Console.Write($"{i} ");
+        Console.WriteLine("\nArray sorted using Insertion Sort algorithm:");
+        for(int i=0; i<n; i++)
+            for(int j=i+1; j<n; j++)
+                if(Arr[i] < Arr[j]){
+                    temp = Arr[i];
+                    Arr[i] = Arr[j];
+                    Arr[j] = Arr[i];
+                }
+        foreach(int i in Arr)
+            Console.Write(i+" ");
   }
   
   // Definition of Question-7
   private static void Question7(){
-        Console.WriteLine();
-        
+        int n;
+        Console.Write("Enter a number to check if it's prime or not: ");
+        n = int.Parse(Console.ReadLine());
+        Console.WriteLine($"The satement about {n} being prime came out to be: {prime(n)}");
   }
+        // -----Connected method-----
+    private bool prime(int n){
+        for(int i=2; i<n/2; i++)
+            if(n%i == 0)
+                return false;
+        return true;
+    }
   
   // Definition of Question-8
   private static void Question8(){
