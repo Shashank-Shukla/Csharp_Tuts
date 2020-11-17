@@ -27,6 +27,57 @@ class Q1{
         Console.WriteLine($":::User Details:::\nName:\t{name}\nAddress:\t{address}");}
 }
 
+//employee rollno, name, address, pin code, phone number, gross salary and pf. 
+//Display the net salary (ie gross less pf) and calculate grade base on net salary. 
+//The grades are: Grade-‘A’ sal>10000  Grade-‘B’ sal>5000  Grade-‘C’ sal<5000
+class emp{
+    private string empName;
+    private int empRNo, pinCode, grossSal, pf;
+    private long phNo;
+    public emp(){
+        /*private string empName;
+        private int empRNo, pinCode, grossSal, pf;
+        private long phNo;*/
+        Console.WriteLine("[INFO]:: Details inputs successful");
+    }
+    
+    public void getDetails(){
+        Console.Write("Enter the employee's Name         : ");
+        empName = Console.ReadLine();
+        Console.Write("Enter the employee's Roll No.     : ");
+        empRNo = int.Parse(Console.ReadLine());
+        Console.Write("Enter the employee's Pin code     : ");
+        pinCode = int.Parse(Console.ReadLine());
+        Console.Write("Enter the employee's gross salary : ");
+        grossSal = int.Parse(Console.ReadLine());
+        Console.Write("Enter the employee's PF amount    : ");
+        pf = int.Parse(Console.ReadLine());
+        Console.Write("Enter the Employee's Phone Number :");
+        phNo = long.Parse(Console.ReadLine());
+    }
+    
+    private char Grade(int netSal){
+        if(netSal >= 10000)
+            return 'A';
+        else if(netSal >= 5000)
+            return 'B';
+        else
+            return 'C';
+    }
+    
+    /*private int netSal(int grossSal, int pf){
+        return Grade(grossSal-pf);
+    }*/
+    
+    public void printDetails(){
+        Console.WriteLine("\n-------------------------------------");
+        Console.WriteLine("[INFO]:: Employee details are as follows:");
+        Console.WriteLine($"[INFO]:: Name        : {empName}\n[INFO]:: R.No.       : {empRNo}\n[INFO]:: Pin-Code     : {pinCode}\n[INFO]:: Phone-number: {phNo}\n[INFO]:: Gross-Salary: {grossSal}\n[INFO]:: PF           : {pf}");
+        Console.WriteLine("-------------------------------------");
+        Console.WriteLine($"[INFO]:: Employee's Grade :\t{Grade(grossSal-pf)}");
+    }
+}
+
 class Day2Tasks {
   static void Main() {
     Console.WriteLine("+===============================+");
@@ -192,7 +243,7 @@ class Day2Tasks {
         Console.WriteLine($"The satement about {n} being prime came out to be: {prime(n)}");
   }
         // -----Connected method-----
-    private bool prime(int n){
+    private static bool prime(int n){
         for(int i=2; i<n/2; i++)
             if(n%i == 0)
                 return false;
@@ -201,13 +252,14 @@ class Day2Tasks {
   
   // Definition of Question-8
   private static void Question8(){
-        Console.WriteLine();
+        Console.WriteLine("Error 404! \nTry another question!");
         
   }
   
   // Definition of Question-9
   private static void Question9(){
-        Console.WriteLine();
-        
+        emp ob = new emp();
+        ob.getDetails();
+        ob.printDetails();
   }
 }
