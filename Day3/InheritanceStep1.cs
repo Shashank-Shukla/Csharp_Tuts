@@ -37,6 +37,10 @@ namespace ConsoleApp3_11Nov20
             int bornyear = dob.Year;
             return currentyear - bornyear;
         }
+        
+        public virtual string GetInfo(){
+            return $"{this.name}'s born on {this.DOB} and is {this.GetAge()} years young!";
+        }
     }
 /*
     class PersonClient
@@ -60,6 +64,11 @@ namespace ConsoleApp3_11Nov20
         {
             this.RollNo = rollno;
             this.Course = course;
+        }
+        
+        public override string GetInfo()    //overriding base class method
+        {
+            return $"{base.GetInfo()}, Rollno={this.RollNo}, Course={this.Course}";
         }
     }
 
