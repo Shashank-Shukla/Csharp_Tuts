@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Threading;
+using System.Threading;
 public class Day3Task {
 	public static void Main() {
 		Console.WriteLine("################");
@@ -13,32 +13,46 @@ public class Day3Task {
 			choice = int.Parse(Console.ReadLine());
 			switch(choice){
 				case 1:	Ques1();
+						contd(ref choice);
 						break;
 				case 2:	Ques2();
+						contd(ref choice);
 						break;
 				case 3:	Ques3();
+						contd(ref choice);
 						break;
 				case 4:	Ques4();
+						contd(ref choice);
 						break;
 				case 5:	Ques5();
+						contd(ref choice);
 						break;
 				case 6:	Ques6();
+						contd(ref choice);
 						break;
 				case 7:	Ques7();
+						contd(ref choice);
 						break;
 				case 8:	Ques8();
+						contd(ref choice);
 						break;
 				case 9:	Ques9();
+						contd(ref choice);
 						break;
 				case 10:	Ques10();
-						break;
+							contd(ref choice);
+							break;
 				case 11:	Ques11();
-						break;
+							contd(ref choice);		
+							break;
 				case 12:	Ques12();
-						break;
+							contd(ref choice);
+							break;
 				case 13:	Ques13();
-						break;
+							contd(ref choice);
+							break;
 				default:	Console.WriteLine("Wrong input, retry!");
+							Thread.Sleep(1500);
 							break;
 			}
 		}
@@ -61,6 +75,15 @@ public class Day3Task {
 		Console.WriteLine("11. Swap two numbers without using a temp variable in C# ");
 		Console.WriteLine("12. Write a C# program to calculate factorial using recursion");
 		Console.WriteLine("13. Write a C# program to check if the entered number is Armstrong number");
+	}
+	
+	private static void contd(ref int choice){
+        Console.Write("\nWanna continue (y/n): ");
+        char c = char.Parse(Console.ReadLine());
+        if((c=='n')||(c=='N'))
+            choice = 14;
+        Console.WriteLine();
+		Thread.Sleep(1500);
 	}
 	
 	public static void Ques1(){
