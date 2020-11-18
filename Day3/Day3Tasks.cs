@@ -218,10 +218,10 @@ public class Day3Task {
 		for(int i=0; i<Arr.Length; i++)
 			if(Arr[i]>1)
 				flag = false;
-		if(flag)
+		if(!flag)
 			Console.WriteLine("The string is not unique");
 		else
-			Console.WriteLine("The string unique");
+			Console.WriteLine("The string is unique");
 	}
 	
 	public static void Ques10(){
