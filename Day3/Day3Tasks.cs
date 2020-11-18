@@ -204,7 +204,7 @@ public class Day3Task {
 		int max, pos;
 		max = Arr.Max();
 		pos = Array.IndexOf(Arr, max);
-		Console.WriteLine("The highest occured charachter is {0} which occured {1} times", Convert.ToChar(max), pos);
+		Console.WriteLine("The highest occured charachter is '{0}' which occured '{1}' times", Convert.ToChar(pos), max);
 	}
 	
 	public static void Ques9(){
