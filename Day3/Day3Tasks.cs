@@ -9,7 +9,6 @@ public class Day3Task {
 		int choice=0;
 		do{
 			getChoices();
-			Console.Write("Enter your choice: ");
 			choice = int.Parse(Console.ReadLine());
 			switch(choice){
 				case 1:	Ques1();
@@ -75,6 +74,8 @@ public class Day3Task {
 		Console.WriteLine("11. Swap two numbers without using a temp variable in C# ");
 		Console.WriteLine("12. Write a C# program to calculate factorial using recursion");
 		Console.WriteLine("13. Write a C# program to check if the entered number is Armstrong number");
+		Console.WriteLine("-------------------------------------------------------------");
+		Console.Write("Enter your choice: ");
 	}
 	
 	private static void contd(ref int choice){
